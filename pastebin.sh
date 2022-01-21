@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 # Set the pastebin username (change if not $USER)
 API_USERNAME=$USER
 
