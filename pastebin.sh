@@ -21,6 +21,11 @@ api_user_key=$(\
          'https://pastebin.com/api/api_login.php' \
 )
 
+if [ -z "$api_user_key" ]; then
+    echo "Unable to obtain api user key" 1>&2
+    exit 1
+fi
+
 # Read input from stdin
 input=$(cat)
 
