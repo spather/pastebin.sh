@@ -16,7 +16,7 @@ API_PASSWORD=$(security find-generic-password -a $API_USERNAME -s pastebin -w)
 api_user_key=$(\
     curl -H "Content-Type: application/x-www-form-urlencoded; charset=UTF-8" \
          -d "api_user_name=$API_USERNAME&api_user_password=$API_PASSWORD&api_dev_key=$API_DEV_KEY" \
-         'http://pastebin.com/api/api_login.php' \
+         'https://pastebin.com/api/api_login.php' \
 )
 
 # Read input from stdin
@@ -26,7 +26,7 @@ input=$(cat)
 url=$(\
       curl -H "Content-Type: application/x-www-form-urlencoded; charset=UTF-8" \
 	   -d "api_option=paste&api_paste_code=$input&api_dev_key=$API_DEV_KEY&api_user_key=$api_user_key" \
-	   'http://pastebin.com/api/api_post.php' \
+	   'https://pastebin.com/api/api_post.php' \
 )
 
 echo $url
